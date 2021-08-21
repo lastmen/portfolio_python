@@ -1,19 +1,20 @@
 def is_valid(num):
-    return 1 <= num <= 100
+    if num.isdigit() == True and 1 <= int(num) <= 100:
+    return True
 import random
 print("'Добро пожаловать в числовую угадайку'")
 b = -1
 n = random.randint(1, 100)
 while n != 34513278753:
-    b = int(input())
+    b = input()
     if is_valid(b) != True:
         print('А может быть все-таки введем целое число от 1 до 100?')
         continue
-    if b < n:
+    if int(b) < n:
         print('Ваше число меньше загаданного, попробуйте еще разок')
-    if b > n:
+    if int(b) > n:
         print('Ваше число больше загаданного, попробуйте еще разок')
-    if n == b:
+    if n == int(b):
         print('Вы угадали, поздравляем!')
         print('Спасибо, что играли в числовую угадайку. Еще увидимся...')
         break
